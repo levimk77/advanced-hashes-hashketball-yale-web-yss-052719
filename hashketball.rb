@@ -117,67 +117,85 @@ def game_hash
 end
 
 playersName = String.new
-def num_points_scored(playersName)
-  game_hash.each do |key, key2|
-    if key2 == playersName
-      key2.each do |player, playerStats|
-        if player == playersName
-          return game_hash[:key][:key2][:Points]
-        end
+
+
+# def num_points_scored(playersName)
+#   game_hash.each do |key, value|
+#     value.each do |key2, value2|
+#       if key2 == playersName
+#         value2.each do |player, playerStats|
+#         if player == playersName
+#           return game_hash[:key][:key2][:Points]
+#         end
+#         end
+#       end
+#     end
+#   end
+#end
+
+#find player
+#get points
+
+def num_points_scored(name)
+  game_hash.each do |teamLocation, teamData|
+    teamLocation[:players].each do |playerName, playerData|
+      if playerName == name
+        playerData[:points]
+        #return game_hash[:teamLocation][:players][playersName][:points]
       end
     end
   end
 end
 
-def shoe_size(playersName)
-  game_hash.each do |key, key2|
-    if key2 == playersName 
-      key2.each do |player, playerStats|
-        if player == playersName
-          return game_hash[:key][:key2][:Shoe]
-        end
+def num_points_scored(name)
+  game_hash.each do |teamLocation, teamData|
+    teamLocation[:players].each do |playerName, playerData|
+      if playerName == name
+        playerData[:Shoe]
+        #return game_hash[:teamLocation][:players][playersName][:points]
       end
     end
   end
 end
 
-teamName = String.new
-def team_colors(teamName)
-  game_hash.each do |key, value|
-    if value == teamName
-      return [:key][:colors]
-    end
-  end
-end
+# teamName = String.new
+# def team_colors(teamName)
+#   game_hash.each do |key, value|
+#     if value == teamName
+#       return game_hash[:key][:colors]
+#     end
+#   end
+# end
 
-def team_names
-  teamNames = Array.new
-  game_hash.each do |key, value|
-    if value == :team_name
-    teamNames << game_hash[:key][:value]
-    end
-  end
-end
+# def team_names
+#   teamNames = Array.new
+#   game_hash.each do |key, value|
+#     if value == :team_name
+#     teamNames << game_hash[:key][:value]
+#     end
+#   end
+# end
 
-def player_numbers(teamName)
-  playerRoster = array.new
-  game_hash.each do |key, value|
-    if key[:team_name] == name
-      key[:players].each do |key2, value2|
-        array << player_hash[:number]
-      end
-    end
-  end
-  playerRoster
-end
+# def player_numbers(teamName)
+#   playerRoster = array.new
+#   game_hash.each do |key, value|
+#     if key[:team_name] == name
+#       key[:players].each do |key2, value2|
+#         array << player_hash[:number]
+#       end
+#     end
+#   end
+#   playerRoster
+# end
 
-def player_stats(name)
-  game_hash.each do |key, value|
-    value[:players].each do |key2, value2|
-      if key2 == name
-        return value2
-      end
-    end
-  end
-end
+# def player_stats(name)
+#   game_hash.each do |key, value|
+#     value[:players].each do |key2, value2|
+#       if key2 == name
+#         return value2
+#       end
+#     end
+#   end
+# end
+# end
 
